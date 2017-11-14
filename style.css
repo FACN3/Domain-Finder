@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+
+body{
+  background-color: rgb(0,0,205);
+  color: white;
+}
+.content{
+  text-align: center;
+  margin: 50px;
+}
+h1{
+ font-size: 45px;
+ font-family: 'Fjalla One', sans-serif;
+}
+
+ input{
+ margin: 10px;
+
+ }
