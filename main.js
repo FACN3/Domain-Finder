@@ -3,33 +3,64 @@ var domain = "github.com";
 var timestamp = "2006";
 
 //API XHR Request function
-var location_api = "freegeoip.net/json/";
+var location_api = "http://freegeoip.net/json/";
 var timeMachine_api = "http://archive.org/wayback/available?url="; //need to fill in domain name and timestamp
 var Wiki_api = "https://en.wikipedia.org/w/api.php?action=query&format=json&"; //need to fill in params
 
-//Function api_call
+// Parallel function (triggers api calls)
+var trigger_apis = function(api_calls) {
+  var count = 0;
+  var len = api_calls.length;
+  //var check = true;
+  var result = [];
+
+  api_calls.forEach(function(call, index) {
+    call(function(err, res) {
+      count += 1;
+      result[index] = res;
+      if (err) {
+        return 1;
+      }
+      else if (count >= len) {
+        //check = false;
+        return 2;
+      }
+    });
+  });
+  if (result !== []) {
+    return result;
+  }
+  else {
+    return "Something went wrong.";
+  }
+}
+
+//Function to make API requests
 var sendRequest = function(url, callback) {
   var xhr = new XMLHttpRequest(url);
-
+  //console.log("We are in the Send Request");
   xhr.onreadystatechange = function() {
-    if (xhr.readystate == 200 && xhr.status == 4) {
-      var data = xhr.responseText;
-      console.log(data);
-      callback(data);
+    if (xhr.readyState == 4 && xhr.status == 200) {
+      callback(JSON.parse(xhr.responseText));
+      console.log(xhr.responseText);
     }
-  }
+    else {
+      console.log(xhr.readyState, xhr.status);
+      return "Sorry, there was an error.";
+    }
+  };
   xhr.open("GET", url, true);
   xhr.send();
-  //console.log(location);
 };
 
 //Object of functions holding each of the api requests
 var api_calls = {
-  location: function() {
+  location: function(domain) {
     var loc_url =  location_api + domain;
     var location = {};
-
-    sendRequest(url, function(data){
+    console.log(loc_url);
+    sendRequest(loc_url, function(xhr){
+      var data = xhr;
       location.ip = data.ip;
       location.city = data.city;
       location.region = data.region_name;
@@ -37,26 +68,27 @@ var api_calls = {
       location.zip = data.zip_code;
       location.timezone = data.time_zone;
       location.coords = [data.latitude, data.longitude];
+      console.log(location);
     });
 
-    console.log(location);
     return location;
   },
-  timeMachine: function() {
+  archive: function(domain, timestamp) {
     var time_url = timeMachine_api + domain + "&timestamp=" + timestamp;
     var timeMachine = {};
 
-    sendRequest(url, function(data){
-      timeMachine.status = data.archived_snapshots.closest[0];
-      timeMachine.available = data.archived_snapshots.closest[1];
-      timeMachine.url = data.archived_snapshots.closest[2];
+    sendRequest(time_url, function(xhr){
+      var data = xhr;
+      timeMachine.status = data.archived_snapshots.closest.status;
+      timeMachine.available = data.archived_snapshots.closest.available;
+      timeMachine.url = data.archived_snapshots.closest.url;
+      console.log(timeMachine);
     });
 
-    console.log(timeMachine);
     return timeMachine;
   },
   Wiki: function() {
-    console.log("working3");
+    console.log("Wiki-working");
   }
 };
 
