@@ -10,19 +10,12 @@ var Wiki_api = "https://en.wikipedia.org/w/api.php?action=query&format=json&"; /
 //Function api_call
 var sendRequest = function(url, callback) {
   var xhr = new XMLHttpRequest(url);
-  var location = {};
+
   xhr.onreadystatechange = function() {
     if (xhr.readystate == 200 && xhr.status == 4) {
       var data = xhr.responseText;
       console.log(data);
-      //callback(data);
-      location.ip = data.ip;
-      location.city = data.city;
-      location.region = data.region_name;
-      location.country = data.country_name;
-      location.zip = data.zip_code;
-      location.timezone = data.time_zone;
-      location.coords = [data.latitude, data.longitude];
+      callback(data);
     }
   }
   xhr.open("GET", url, true);
@@ -66,20 +59,6 @@ var api_calls = {
     console.log("working3");
   }
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //Filter function
 
