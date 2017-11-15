@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 <head>
   <!-- Meta -->
   <meta charset="utf-8">
@@ -7,26 +8,27 @@
   <title>Domain-Finder</title>
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+  <link href="https://fonts.googleapis.com/css?family=Exo+2:500" rel="stylesheet">
 </head>
   <!-- Body -->
 <body class="content">
 
   <section>
-    <h1 class="content--title">The Finders!</h1>
-    <p class="paragraph">Type the domain (www.example.com) and date to search for information and
-      take a look on it's past</p>
+    <h1 class="content__title">The Finders!</h1>
+    <p class="content__title__tagline">Type the domain (www.example.com) and date to search for information and
+      take a look at it's past</p>
 
     <div class="content__form">
       <form>
-        <input type="text" name="text" placeholder="Add domain here" size="30" id="domain_name">
-        <input type="text" name="text" placeholder="Add year to search here" size="30" id="year">
+        <input type="text" name="text" placeholder="Add domain here" size="25" id="domain_name">
+        <input type="text" name="text" placeholder="Add year to search" size="25" id="year">
         <button onclick="updateDOM(event)">Submit</button>
       </form>
     </div>
     <div class="content__display">
       <div class="content__display__location" id="location">
       </div>
-      <div class="content__display--archive" id="summonButton">
+      <div class="content__display--archive" id="archive_info">
       </div>
     </div>
   </section>
