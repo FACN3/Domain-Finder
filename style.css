@@ -40,6 +40,11 @@ src: url('Assets/Fonts/FjallaOne-Regular.ttf');
   background-position: fixed;
 }
 
+.paragraph{
+  font-size: 24px;
+  font-family: Fjalla One, sans-serif;
+}
+
 .content__display__location--ul {
   list-style-type: none;
   text-align: center;
