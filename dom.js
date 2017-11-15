@@ -27,19 +27,19 @@ function displayLocation(location_obj) {
     });
 
     var ip = document.getElementById("loc_0");
-    ip.textContent = "IP address: " + "\t" + location_obj.ip;
+    ip.textContent = "IP address: " + location_obj.ip;
     var city = document.getElementById("loc_1");
-    city.textContent = "City: " + "\t" + location_obj.city;
+    city.textContent = "City: " + location_obj.city;
     var region = document.getElementById("loc_2");
-    region.textContent = "State/Region: " + "\t" + location_obj.region;
+    region.textContent = "State/Region: " + location_obj.region;
     var country = document.getElementById("loc_3");
-    country.textContent = "Country: " + "\t" + location_obj.country;
+    country.textContent = "Country: " + location_obj.country;
     var zip = document.getElementById("loc_4");
-    zip.textContent = "Zipcode: " + "\t" + location_obj.zip;
+    zip.textContent = "Zipcode: " + location_obj.zip;
     var timezone = document.getElementById("loc_5");
-    timezone.textContent = "Timezone: " + "\t" + location_obj.timezone;
+    timezone.textContent = "Timezone: " + location_obj.timezone;
     var coords = document.getElementById("loc_6");
-    coords.textContent = "Coordinates: " + "\t" + location_obj.coords[0] + ", " + location_obj.coords[1];
+    coords.textContent = "Coordinates: " + location_obj.coords[0] + ", " + location_obj.coords[1];
 
 }
 
