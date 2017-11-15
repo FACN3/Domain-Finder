@@ -4,22 +4,24 @@ font-family: Fjalla One;
 src: url('Assets/Fonts/FjallaOne-Regular.ttf');
 }
 
-/*body {
-  background-color: rgb(0,0,205);
-  color: white;
-}*/
-
 .content{
-  text-align: center;
+  /*text-align: center;*/
   margin: 10vh 10vw 10vh 10vw;
   background-color: rgb(0,0,205);
   color: white;
 }
 
-.content--title {
+.content__title {
   margin-bottom: 50px;
   font-size: 45px;
   font-family: Fjalla One, sans-serif;
+  text-align: center;
+}
+
+.content__title__tagline {
+  font-size: 24px;
+  font-family: Fjalla One, sans-serif;
+  text-align: center;
 }
 
 .content__form {
@@ -31,56 +33,55 @@ src: url('Assets/Fonts/FjallaOne-Regular.ttf');
 .content__display {
   background-color: purple;
   border-radius: 25px;
-  margin-right: 10vw;
-  margin-left: 10vw;
-  margin-top: 10vh;
-  margin-bottom: 5vh;
-  /*padding-top: 10vh;
-  padding-bottom: 10vh;*/
-  background-position: fixed;
+  margin: 1vh 10vw 5vh 10vw;
+
 }
 
-.paragraph{
-  font-size: 24px;
-  font-family: Fjalla One, sans-serif;
+.content__display__location {
+  margin-top: 1vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
 }
 
 .content__display__location--ul {
   list-style-type: none;
   text-align: center;
   margin-bottom: 10vh;
-  padding-top: 5vh;
-  /*padding-bottom: 5vh;*/
 }
 
 .content__display__location--li {
   font-size: 22px;
+  margin-top: 2vh;
+  font-family: 'Exo 2', sans-serif;
 }
 
 .content__display--archive {
-  margin-bottom: 10vh;
+  text-align: center;
+}
+input[placeholder] {
+  font-family: 'Exo 2', sans-serif;
 }
 
- input{
+input{
  margin: 10px;
  font-size: 24px;
+}
+
+button{
+  transition-duration: 0.4s;
+  border: 1% solid white;
+  background-color: white;
+  border-color: white;
+  font-size: 20px;
+  font-family: 'Exo 2', sans-serif;
+  border-radius: 10px;
+  padding: 10px;
+  /*margin-top: 10px;*/
+  margin-bottom: 10vh;
  }
 
- button{
-   transition-duration: 1.4s;
-   border: 1% solid white;
-   background-color: white;
-   border-color: white;
-   font-size: 20px;
-   border-radius: 10px;
-   padding: 10px;
-   margin-top: 10px;
-   margin-bottom: 10vh;
-
- }
-
- button:hover {
-    background-color: rgb(0,0,205); /* mediumblue */
-    color: white;
-    border-color: white;
+button:hover {
+  background-color: rgb(0,0,205); /* mediumblue */
+  color: white;
+  border-color: white;
 }
