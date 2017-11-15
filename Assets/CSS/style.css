@@ -4,24 +4,39 @@ font-family: 'Fjalla One', sans-serif;
 src: url('Assets/Fonts/FjallaOne-Regular.ttf');
 }
 
-body{
+/*body {
   background-color: rgb(0,0,205);
   color: white;
-}
+}*/
 
 .content{
   text-align: center;
   margin: 50px;
+  background-color: rgb(0,0,205);
+  color: white;
 }
 
-h1{
+.content--title {
+  margin-bottom: 50px;
+  font-size: 45px;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+/*.title {
  font-size: 45px;
  font-family: 'Fjalla One', sans-serif;
-}
+}*/
 
+.content__form {
+  display: inline-block;
+  text-align: center;
+}
  input{
  margin: 10px;
  font-size: 24px;
+ /*display: block;
+ text-align: center;*/
+
  }
 
  button{

@@ -7,33 +7,6 @@ var location_api = "http://freegeoip.net/json/";
 var timeMachine_api = "http://archive.org/wayback/available?url="; //need to fill in domain name and timestamp
 var Wiki_api = "https://en.wikipedia.org/w/api.php?action=query&format=json&"; //need to fill in params
 
-// Parallel function (triggers api calls)
-var trigger_apis = function(api_calls) {
-  var count = 0;
-  var len = api_calls.length;
-  //var check = true;
-  var result = [];
-
-  api_calls.forEach(function(call, index) {
-    call(function(err, res) {
-      count += 1;
-      result[index] = res;
-      if (err) {
-        return 1;
-      }
-      else if (count >= len) {
-        //check = false;
-        return 2;
-      }
-    });
-  });
-  if (result !== []) {
-    return result;
-  }
-  else {
-    return "Something went wrong.";
-  }
-}
 
 //Function to make API requests
 var sendRequest = function(url, callback) {
@@ -74,7 +47,7 @@ var api_calls = {
     return location;
   },
   archive: function(domain, timestamp) {
-    var time_url = timeMachine_api + domain + "&timestamp=" + timestamp;
+    var time_url = "https://cors-anywhere.herokuapp.com/" + timeMachine_api + domain + "&timestamp=" + timestamp;
     var timeMachine = {};
 
     sendRequest(time_url, function(xhr){
