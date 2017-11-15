@@ -17,7 +17,7 @@ var sendRequest = function(url, callback) {
 //Object of functions holding each of the api requests
 var api_calls = {
   location: function(domain) {
-    var loc_url =  "http://freegeoip.net/json/" + domain;
+    var loc_url =  "https://freegeoip.net/json/" + domain;
     var location = {};
     sendRequest(loc_url, function(xhr){
       var data = xhr;
