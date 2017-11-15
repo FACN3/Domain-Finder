@@ -2,33 +2,47 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="Assets/CSS/style.css">
+  <!-- Meta -->
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Domain-Finder</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" type="text/css" media="screen" />
+
 </head>
 
+  <!-- Body -->
+  
 <body class="content">
-  <section>
-<h1 class="content--title">The Finders</h1>
-  <div class="content__form">
-  <form>
-    <input type="text" name="text" id="domain_name">
-    <input type="text" name="text" id="year">
-    <button onclick="updateDOM(event)">Submit</button>
-  </form>
-</div>
-<div class="content__display">
-  <div class="content__display__location" id="location">
-  </div>
-  <div class="content__display--archive" id="summonButton">
 
-  </div>
-</div>
-</section>
-<script src="./main.js"></script>
-<script src="./dom.js"></script>
-<section>
+  <section>
+    <h1 class="content--title">The Finders!</h1>
+
+    <div class="content__form">
+      <form>
+        <input type="text" name="text" placeholder="Add domain here" size="30" id="domain_name">
+        <input type="text" name="text" placeholder="Add year to search here" size="30" id="year">
+        <button onclick="updateDOM(event)">Submit</button>
+      </form>
+    </div>
+
+    <div class="content__display">
+
+      <div class="content__display__location" id="location">
+      </div>
+
+      <div class="content__display--archive" id="summonButton">
+      </div>
+
+    </div>
+
+  </section>
+  <script src="./main.js"></script>
+  <script src="./dom.js"></script>
+  <section>
+
 </body>
 
 </html>
