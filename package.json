@@ -4,7 +4,7 @@
   "description": "Simple application that queries for a domain and returns IP location information as well as some historical facts.",
   "main": "main.js",
   "scripts": {
-    "dev": "live-server",
+    "dev": "live-server --cors",
     "test": "tape ./tests/*.test.js | tap-spec"
   },
   "repository": {
@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/FACN3/Domain-Finder#readme",
   "devDependencies": {
+    "http-server": "^0.10.0",
     "live-server": "^1.2.0",
     "nyc": "^11.3.0",
     "tap-spec": "^4.1.1",
