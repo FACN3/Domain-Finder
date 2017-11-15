@@ -22,15 +22,15 @@
 
     <div class="content__form">
       <form>
-        <input type="text" name="text" placeholder="Add domain here" size="30">
-        <input type="text" name="text" placeholder="Add year to search here" size="30">
-        <button onclick="summonButton()">Submit</button>
+        <input type="text" name="text" placeholder="Add domain here" size="30" id="domain_name">
+        <input type="text" name="text" placeholder="Add year to search here" size="30" id="year">
+        <button onclick="updateDOM(event)">Submit</button>
       </form>
     </div>
 
     <div class="content__display">
 
-      <div class="content__display__location">
+      <div class="content__display__location" id="location">
       </div>
 
       <div class="content__display--archive" id="summonButton">
