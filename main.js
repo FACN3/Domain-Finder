@@ -1,11 +1,11 @@
 // Domain and timestamp (testing purposes)
-var domain = "github.com";
-var timestamp = "2006";
+//var domain = "github.com";
+//var timestamp = "2006";
 
 //API XHR Request function
-var location_api = "http://freegeoip.net/json/";
-var timeMachine_api = "http://archive.org/wayback/available?url="; //need to fill in domain name and timestamp
-var Wiki_api = "https://en.wikipedia.org/w/api.php?action=query&format=json&"; //need to fill in params
+//var location_api = "http://freegeoip.net/json/";
+//var timeMachine_api = "http://archive.org/wayback/available?url="; //need to fill in domain name and timestamp
+//var Wiki_api = "https://en.wikipedia.org/w/api.php?action=query&format=json&"; //need to fill in params
 
 
 //Function to make API requests
@@ -29,7 +29,7 @@ var sendRequest = function(url, callback) {
 //Object of functions holding each of the api requests
 var api_calls = {
   location: function(domain) {
-    var loc_url =  location_api + domain;
+    var loc_url =  "http://freegeoip.net/json/" + domain;
     var location = {};
     console.log(loc_url);
     sendRequest(loc_url, function(xhr){
@@ -47,7 +47,7 @@ var api_calls = {
     return location;
   },
   archive: function(domain, timestamp) {
-    var time_url = "https://cors-anywhere.herokuapp.com/" + timeMachine_api + domain + "&timestamp=" + timestamp;
+    var time_url = "https://cors-anywhere.herokuapp.com/" + "http://archive.org/wayback/available?url=" + domain + "&timestamp=" + timestamp;
     var timeMachine = {};
 
     sendRequest(time_url, function(xhr){
