@@ -14,30 +14,32 @@ function updateDOM(event) {
 function displayLocation(location_obj) {
   var list = document.createElement('ul');
   list.setAttribute("id", "location_infos");
+  list.setAttribute("class", "content__display__location--ul");
   document.getElementById('location').appendChild(list);
 
   //console.log(location_obj);
   Object.keys(location_obj).forEach(function(li,idx) {
     var list_element = document.createElement('li');
     list_element.setAttribute("id", "loc_" + idx);
+    list_element.setAttribute("class", "content__display__location--li")
     list.appendChild(list_element);
   });
   //console.log(Object.keys(location_obj));
 
   var ip = document.getElementById("loc_0");
-  ip.textContent = "IP address:\t" + location_obj.ip;
+  ip.textContent = "IP address: " + "\t" + location_obj.ip;
   var city = document.getElementById("loc_1");
-  city.textContent = "City:\t" + location_obj.city;
+  city.textContent = "City: " + "\t" + location_obj.city;
   var region = document.getElementById("loc_2");
-  region.textContent = "State/Region:\t" + location_obj.region;
+  region.textContent = "State/Region: " + "\t" + location_obj.region;
   var country = document.getElementById("loc_3");
-  country.textContent = "Country:\t" + location_obj.country;
+  country.textContent = "Country: " + "\t" + location_obj.country;
   var zip = document.getElementById("loc_4");
-  zip.textContent = "Zipcode:\t" + location_obj.zip;
+  zip.textContent = "Zipcode: " + "\t" + location_obj.zip;
   var timezone = document.getElementById("loc_5");
-  timezone.textContent = "Timezone:\t" + location_obj.timezone;
+  timezone.textContent = "Timezone: " + "\t" + location_obj.timezone;
   var coords = document.getElementById("loc_6");
-  coords.textContent = "Coordinates:\t" + location_obj.coords;
+  coords.textContent = "Coordinates: " + "\t" + location_obj.coords[0] + ", " + location_obj.coords[1];
 
 }
 
@@ -55,11 +57,8 @@ function displayArchive(archive_obj) {
 
 function summonButton(url) {
     var btn = document.createElement("BUTTON");
-    btn.appendChild(document.createTextNode('Submit'));
-    btn.setAttribute("href", url);
-    btn.setAttribute("target", "_blank");
-    btn.setAttribute("type", "submit");
+    btn.appendChild(document.createTextNode('Take Me Back!'));
+    btn.setAttribute("onclick", "window.open('" + url +"', '_blank');");
     var summonButton = document.getElementById('summonButton');
     summonButton.appendChild(btn);
-    //document.getElementById("submitButton").disabled = true;
 }

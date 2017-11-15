@@ -8,7 +8,7 @@ var sendRequest = function(url, callback) {
       //console.log(xhr.responseText);
     }
     else {
-      //console.log(xhr.readyState, xhr.status);
+      console.log(xhr.readyState, xhr.status);
       return "Sorry, there was an error.";
     }
   };
