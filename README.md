@@ -10,7 +10,7 @@
 
 #### WHY :key:
 
-We wanted to create a simple application that blended together the information from two different API sources so that the user could get see both the information about a domain (location, IP address etc) and link through to an image of how it looked at the period of time selected.
+We wanted to create a simple application that blended together the information from two different API sources so that the user could see information about a domain (location, IP address etc) and link through to an image of how it looked at the period of time selected.
 
 #### WHAT	:loudspeaker:
 To access the APIs successfully via our app, using pure JavaScript functions.
