@@ -5,10 +5,7 @@ function updateDOM(event) {
   var year = document.getElementById('year').value;
 
   var location = api_calls.location(domain);
-  console.log(location);
-
   var archive_obj = api_calls.archive(domain, year);
-  console.log(archive_obj);
 }
 
 function displayLocation(location_obj) {
@@ -44,11 +41,11 @@ function displayLocation(location_obj) {
 }
 
 function displayArchive(archive_obj) {
-  var parent = document.getElementById('archive_info');
+  var parent_div = document.getElementById('archive_info');
   if (archive_obj.status !== "200" && archive_obj.available !== true) {
     var err = document.createElement('h2');
     err.textContent = "Sorry, no archive snapshot available for this website...";
-    parent.appendChild(err);
+    parent_div.appendChild(err);
   }
   else {
     updateButton(archive_obj.url);
@@ -65,10 +62,10 @@ function createButton(url) {
 }
 
 function updateButton(url) {
-    var hidden = document.getElementById('hidden_btn');
-    if (hidden) {
-      var parent = document.getElementById("archive_info");
-      parent.removeChild(hidden);
+    var hidden_btn = document.getElementById('hidden_btn');
+    if (hidden_btn) {
+      var parent_div = document.getElementById("archive_info");
+      parent_div.removeChild(hidden);
       createButton(url);
     }
     else {
