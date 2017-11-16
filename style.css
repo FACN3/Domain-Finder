@@ -12,14 +12,14 @@ src: url('Assets/Fonts/FjallaOne-Regular.ttf');
 }
 
 .content__title {
-  margin-bottom: 50px;
-  font-size: 45px;
+  margin-bottom: 1.625em;
+  font-size: 3em;
   font-family: Fjalla One, sans-serif;
   text-align: center;
 }
 
 .content__title__tagline {
-  font-size: 24px;
+  font-size: 1.5em;
   font-family: Fjalla One, sans-serif;
   text-align: center;
 }
@@ -32,7 +32,7 @@ src: url('Assets/Fonts/FjallaOne-Regular.ttf');
 
 .content__display {
   background-color: purple;
-  border-radius: 25px;
+  border-radius: 1.5625em;
   margin: 1vh 10vw 5vh 10vw;
 
 }
@@ -50,7 +50,7 @@ src: url('Assets/Fonts/FjallaOne-Regular.ttf');
 }
 
 .content__display__location--li {
-  font-size: 22px;
+  font-size: 1.375em;
   margin-top: 2vh;
   font-family: 'Exo 2', sans-serif;
 }
@@ -63,8 +63,8 @@ input[placeholder] {
 }
 
 input{
- margin: 10px;
- font-size: 24px;
+ margin: 0.625em;
+ font-size: 1.5em;
 }
 
 button{
@@ -72,11 +72,10 @@ button{
   border: 1% solid white;
   background-color: white;
   border-color: white;
-  font-size: 20px;
+  font-size: 1.25em;
   font-family: 'Exo 2', sans-serif;
-  border-radius: 10px;
-  padding: 10px;
-  /*margin-top: 10px;*/
+  border-radius: 0.625em;
+  padding: 0.625em;
   margin-bottom: 10vh;
  }
 
