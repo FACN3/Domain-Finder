@@ -15,14 +15,20 @@
 
   <section>
     <h1 class="content__title">The Finders!</h1>
-    <p class="content__title__tagline">Type the domain (www.example.com) and date to search for information and
-      take a look at it's past</p>
-
+    <div style="text-align:left;">
+    <p class="content__title__tagline">1) Type a Domain that exists.</p>
+    <p class="content__title__tagline">2) Insert a year that site was working in.</p>
+    <p class="content__title__tagline">3) Press "Search the Domain" Button.</p>
+    <p class="content__title__tagline">4) If the domain has archived info
+    a button called "Take me back!" will appear.</p>
+    <p class="content__title__tagline">5) Press "Take me back!" button to go
+    to the past.</p>
+  </div>
     <div class="content__form">
       <form>
-        <input type="text" name="text" placeholder="Add domain here" size="25" id="domain_name">
-        <input type="text" name="text" placeholder="Add year to search" size="25" id="year">
-        <button onclick="updateDOM(event)">Submit</button>
+        <input type="text" name="text" placeholder="Add domain here" size="25" id="domain_name"><br>
+        <input type="text" name="text" placeholder="Add year to search" size="25" id="year"><br>
+        <button onclick="updateDOM(event)">Search the Domain</button>
       </form>
     </div>
     <div class="content__display">
