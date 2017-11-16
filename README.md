@@ -31,6 +31,14 @@ Outline as follows:
 - 5 Dom Manipulation
 - 6 Rendering of information back to user
 
+#### Instructions for using the website:
+
+1) Insert any type of domain that actually exists.
+2) Insert the year you want to check how the site looked like back in that time.
+3) Press "Search the Domain" Button.
+4) If the domain have archived information a button called "Take me back!" will appear.
+5) Click the "Take me back!" button to go back to the year you inserted in the textbox.
+6) Enjoy the past.
 
 ----------------------------------
 
