@@ -1,7 +1,7 @@
 
 // Error handling function
 function error() {
-  alert("Invalid domain or timestamp.");
+  alert("Invalid domain or timestamp.")
 }
 
 //Function to make API requests
