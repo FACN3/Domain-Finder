@@ -12,7 +12,7 @@ src: url('Assets/Fonts/FjallaOne-Regular.ttf');
 }
 
 .content__title {
-  margin-bottom: 1.625em;
+  margin-bottom: 0.5em;
   font-size: 3em;
   font-family: Fjalla One, sans-serif;
   text-align: center;
