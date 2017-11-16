@@ -65,7 +65,7 @@ function updateButton(url) {
     var hidden_btn = document.getElementById('hidden_btn');
     if (hidden_btn) {
       var parent_div = document.getElementById("archive_info");
-      parent_div.removeChild(hidden);
+      parent_div.removeChild(hidden_btn);
       createButton(url);
     }
     else {

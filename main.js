@@ -1,3 +1,9 @@
+
+// Error handling function
+function error() {
+  alert("Invalid domain or timestamp.")
+}
+
 //Function to make API requests
 var sendRequest = function(url, callback) {
   var xhr = new XMLHttpRequest(url);
@@ -5,9 +11,9 @@ var sendRequest = function(url, callback) {
     if (xhr.readyState == 4 && xhr.status == 200) {
       callback(JSON.parse(xhr.responseText));
     }
-    else {
+    else if (xhr.readyState == 4 && xhr.status == 404){
       console.log(xhr.readyState, xhr.status);
-      return "Sorry, there was an error.";
+      error();
     }
   };
   xhr.open("GET", url, true);
