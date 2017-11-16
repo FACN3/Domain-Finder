@@ -40,10 +40,13 @@ var api_calls = {
 
     sendRequest(time_url, function(xhr){
       var data = xhr;
-      timeMachine.status = data.archived_snapshots.closest.status;
-      timeMachine.available = data.archived_snapshots.closest.available;
-      timeMachine.url = data.archived_snapshots.closest.url;
-    
+
+      var dataArcSnap = data.archived_snapshots.closest;
+
+      timeMachine.status = dataArcSnap.status;
+      timeMachine.available = dataArcSnap.available;
+      timeMachine.url = dataArcSnap.url;
+
       if (timeMachine.url) {
         displayArchive(timeMachine);
       }
